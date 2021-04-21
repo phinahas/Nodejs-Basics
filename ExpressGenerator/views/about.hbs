@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="width: 100%; height: 500px; color: aqua; background-color: black;">
+   <h1>{{text}}</h1>
+   <ul>
+        {{#each name}}
+       <li><h1>{{@index}}.{{this}}</h1></li>
+         {{/each}} 
+   </ul>
+   ________________________________________________________________________________________
+
+   <h1>{{persons.comments.coment}}</h1>
+
+   _________________________________________________________________________________________
+    
+    
+     {{# if persons.admin}}
+         <p>{{persons.name}} is admin</p>
+         {{else}}
+         <p>{{persons.name}} is not an admin</p>
+    {{/if}}
+____________________________________________________________________________________________
+  
+  
+     <p>
+         {{#with persons}}
+          <h1>{{name}}</h1>
+          {{#with comments}}
+          <h3>{{coment}} {{date}}</h3>
+          {{/with}}
+          admin:{{admin}}
+          {{/with}}
+     </p>
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+"C:\Program Files\MongoDB\Server\4.4\bin\mongo.exe"
+
+
+
+filtering
+___________
+
+>> To get the document of users with place Pathnamthitta
+>db.users.find({"place":"Pathnamthitta"}).pretty() 
+======================================================================================================================
+>>filter by name and only display age and name
+> db.users.find({"place":"Pathnamthitta"},{"_id":0,"name":1,"age":1}).pretty()
+{ "name" : "Phinahas", "age" : 20 }
+{ "name" : "Noel", "age" : 20 }
+==========================================================================================================================
+>>Update value db.users.Update({refering index},{what all to be changed})
+> db.users.update({name:"Phinahas"},{$set:{name:"Phinahas Philip",hobby:"Reading"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("5f9d04fd605f1fe1a740a86e"),
+        "name" : "Sreejith",
+        "age" : 20
+}
+{
+        "_id" : ObjectId("5f9d04fd605f1fe1a740a86f"),
+        "name" : "Sonu",
+        "age" : 20,
+        "place" : "Kozikide"
+}
+{
+        "_id" : ObjectId("5f9d0655605f1fe1a740a870"),
+        "name" : "Phinahas Philip",
+        "age" : 20,
+        "place" : "Pathnamthitta",
+        "hobby" : "Reading"
+}
+{
+        "_id" : ObjectId("5f9d0655605f1fe1a740a871"),
+        "name" : "Sonu",
+        "age" : 20,
+        "place" : "kozikode"
+}
+{
+        "_id" : ObjectId("5f9d0655605f1fe1a740a872"),
+        "name" : "Sreejith",
+        "age" : 20,
+        "place" : "Kotarakara"
+}
+{
+        "_id" : ObjectId("5f9d0655605f1fe1a740a873"),
+        "name" : "Noel",
+        "age" : 20,
+        "place" : "Pathnamthitta"
+}
+===========================================================================================================================================
+>> To remove document of certian key value
+db.users.remove({name:"Sonu"})
+===========================================================================================================================================
